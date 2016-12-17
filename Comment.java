@@ -24,8 +24,6 @@ class Settings{
 
 public class Comment{
 	public static void main(String args[]){
-		
-
 		GUIResponse gur = new GUIResponse();
 		gur.initiateResponse();
 
@@ -61,8 +59,6 @@ class GUIResponse{
 
 	static String commentPreview = "\nComment assimilated so far...\n\n";
 	static String dumping = "\nEnforcing AD-HOC deletion. Restarting commenting machinations.\n";
-	//print
-	//exit resume
 
 	public GUIResponse(){
 		ip = new InputPrompt();
@@ -129,8 +125,6 @@ class GUIResponse{
 		print("\nYou have reviewed all settings. Shutting down setting's editor.");
 
 		//display settings
-
-
 	}
 
 	void respondFile(){
@@ -140,7 +134,6 @@ class GUIResponse{
 		if(ask(true)){
 			filepath = ip.getInput();
 			print("\nFilePath is confirmed. Roger that.\n");
-			
 		}
 
 		else
@@ -183,10 +176,8 @@ class GUIResponse{
 		try {
 
 			File file = new File(filepath);	
-			//print("hahhhhhhhhhahah");
 			// if file doesnt exists, then create it
 			if (!file.exists()) {
-				//print("hahhhhhhhhhahah");
 				file.createNewFile();
 			}
 
@@ -201,11 +192,11 @@ class GUIResponse{
 			e.printStackTrace();
 		}
 	}
+	
 	void edit(String st){
 		comment = new String(st);
 	}
-	//void 
-
+	
 	void initiateCommentary(){
 		//get input
 		//interpret
@@ -290,8 +281,6 @@ class InputPrompt{
 		for(int i=0; i<1; i++){
 			System.out.println(attr[i]);
 		}
-
-//		System.out.println
 	}
 
 };
@@ -326,7 +315,6 @@ class Interpreter{
 	}
 
 	public String set(String st){
-		//System.out.println("In SET method.");
 		str = st;
 		return str;
 	}
@@ -334,9 +322,6 @@ class Interpreter{
 	public boolean interpretOpt(GUIResponse gr){
 		if (str.startsWith(qualifier)){
 			String cmd = str.substring(qualifier.length(), str.length());
-			
-			//gr.print("HOHOHOH" + cmd);
-			
 				if (cmd.equals("help")){
 					gr.respondHelp();
 				}
